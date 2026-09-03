@@ -1,9 +1,12 @@
 program 1
 import pandas as pd
 pd.set_option("future.infer_string", False)
+
 df = pd.read_csv("ecommerce_sales.csv")
+
 print("Original Column Names:")
 print(df.columns)
+
 df.rename(columns={
     'orderid': 'Order_ID',
     'cust': 'Customer_Name',
@@ -13,6 +16,7 @@ df.rename(columns={
     'price': 'Price',
     'city': 'City'
 }, inplace=True)
+
 print("\nRenamed Column Names:")
 print(df.columns)
 
@@ -21,6 +25,7 @@ output:<img width="643" height="135" alt="Screenshot 2026-09-03 110713" src="htt
 program 2
 import pandas as pd
 pd.set_option("future.infer_string", False)
+
 df = pd.read_csv("ecommerce_sales.csv")
 df.rename(columns={
     'orderid': 'Order_ID',
@@ -31,10 +36,13 @@ df.rename(columns={
     'price': 'Price',
     'city': 'City'
 }, inplace=True)
+
 print("Before Conversion:")
 print(df.dtypes)
+
 df["Price"] = df["Price"].astype(float)
 df["Quantity"] = df["Quantity"].astype(int)
+
 print("\nAfter Conversion:")
 print(df.dtypes)
 
@@ -43,6 +51,7 @@ output:<img width="239" height="396" alt="Screenshot 2026-09-03 110830" src="htt
 program 3
 import pandas as pd
 pd.set_option("future.infer_string", False)
+
 df = pd.read_csv("ecommerce_sales.csv")
 df.rename(columns={
     'orderid': 'Order_ID',
@@ -53,6 +62,7 @@ df.rename(columns={
     'price': 'Price',
     'city': 'City'
 }, inplace=True)
+
 df["Age_EqualWidth"] = pd.cut(
     df["Age"],
     bins=4,

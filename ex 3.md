@@ -4,6 +4,7 @@ import pandas as pd
 df = pd.read_csv("data.csv")
 df.reset_index(inplace=True)
 df.rename(columns={"index": "Index"}, inplace=True)
+
 print(df)
 
 output:<img width="564" height="454" alt="Screenshot 2026-09-03 104958" src="https://github.com/user-attachments/assets/5c6df89f-512b-45fb-bf48-99a9a50c5f6c" />
@@ -13,7 +14,9 @@ program 2
 import pandas as pd
 
 df = pd.read_csv("data.csv")
+
 print(df.isnull().sum())
+
 output:<img width="162" height="141" alt="Screenshot 2026-09-03 105102" src="https://github.com/user-attachments/assets/38b80c66-29a6-48f0-a319-403493406a1c" />
 
 program 3
